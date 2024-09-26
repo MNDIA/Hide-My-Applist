@@ -10,7 +10,7 @@
     <string name="title_app_select">Uygulama Seç</string>
     <string name="title_app_settings">Uygulama ayarları</string>
     <string name="title_about">Hakkında</string>
-    <string name="do_not_dual">HMA\'yı 2. Kullanıcı Hesabına Yüklemeyin</string>
+    <string name="do_not_dual">YPW\'yı 2. Kullanıcı Hesabına Yüklemeyin</string>
     <string name="show_crash_log">Kilitlenme günlüğünü göster</string>
     <string name="config_damaged">Ayar Dosyası Bozuk. Uygulama Önbelleğini Silin</string>
     <string name="edit_list">Listeyi Düzenle</string>

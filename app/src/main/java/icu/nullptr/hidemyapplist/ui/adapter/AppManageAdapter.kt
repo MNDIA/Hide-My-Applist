@@ -1,8 +1,8 @@
-package icu.nullptr.hidemyapplist.ui.adapter
+package icu.nullptr.fgol.ui.adapter
 
 import android.view.ViewGroup
-import icu.nullptr.hidemyapplist.service.ConfigManager
-import icu.nullptr.hidemyapplist.ui.view.AppItemView
+import icu.nullptr.fgol.service.ConfigManager
+import icu.nullptr.fgol.ui.view.AppItemView
 
 class AppManageAdapter(
     private val onItemClickListener: (String) -> Unit

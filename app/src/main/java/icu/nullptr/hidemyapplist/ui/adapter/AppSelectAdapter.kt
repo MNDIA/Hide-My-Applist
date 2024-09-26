@@ -1,11 +1,11 @@
-package icu.nullptr.hidemyapplist.ui.adapter
+package icu.nullptr.fgol.ui.adapter
 
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import icu.nullptr.hidemyapplist.service.PrefManager
-import icu.nullptr.hidemyapplist.ui.view.AppItemView
-import icu.nullptr.hidemyapplist.util.PackageHelper
+import icu.nullptr.fgol.service.PrefManager
+import icu.nullptr.fgol.ui.view.AppItemView
+import icu.nullptr.fgol.util.PackageHelper
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 

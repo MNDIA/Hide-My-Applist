@@ -1,13 +1,13 @@
-package icu.nullptr.hidemyapplist.util
+package icu.nullptr.fgol.util
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.IPackageManager
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import icu.nullptr.hidemyapplist.common.Constants
-import icu.nullptr.hidemyapplist.hmaApp
-import icu.nullptr.hidemyapplist.service.PrefManager
+import icu.nullptr.fgol.common.Constants
+import icu.nullptr.fgol.ypwApp
+import icu.nullptr.fgol.service.PrefManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -61,12 +61,12 @@ object PackageHelper {
 
     init {
         // TODO: PackageManagerDelegate
-        pm = hmaApp.packageManager
+        pm = ypwApp.packageManager
         invalidateCache()
     }
 
     fun invalidateCache() {
-        hmaApp.globalScope.launch {
+        ypwApp.globalScope.launch {
             mRefreshing.emit(true)
             val cache = withContext(Dispatchers.IO) {
                 val packages = pm.getInstalledPackages(0)
@@ -74,7 +74,7 @@ object PackageHelper {
                     for (packageInfo in packages) {
                         if (packageInfo.packageName in Constants.packagesShouldNotHide) continue
                         val label = pm.getApplicationLabel(packageInfo.applicationInfo).toString()
-                        val icon = hmaApp.appIconLoader.loadIcon(packageInfo.applicationInfo)
+                        val icon = ypwApp.appIconLoader.loadIcon(packageInfo.applicationInfo)
                         it[packageInfo.packageName] = PackageCache(packageInfo, label, icon)
                     }
                 }

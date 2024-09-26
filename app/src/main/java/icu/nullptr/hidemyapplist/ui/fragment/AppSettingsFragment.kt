@@ -1,4 +1,4 @@
-package icu.nullptr.hidemyapplist.ui.fragment
+package icu.nullptr.fgol.ui.fragment
 
 import android.os.Bundle
 import android.view.View
@@ -12,14 +12,14 @@ import androidx.navigation.fragment.navArgs
 import androidx.preference.*
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.tsng.hidemyapplist.R
-import com.tsng.hidemyapplist.databinding.FragmentSettingsBinding
-import icu.nullptr.hidemyapplist.common.JsonConfig
-import icu.nullptr.hidemyapplist.service.ConfigManager
-import icu.nullptr.hidemyapplist.ui.util.navController
-import icu.nullptr.hidemyapplist.ui.util.setupToolbar
-import icu.nullptr.hidemyapplist.ui.viewmodel.AppSettingsViewModel
-import icu.nullptr.hidemyapplist.util.PackageHelper
+import com.ss.fgol.R
+import com.ss.fgol.databinding.FragmentSettingsBinding
+import icu.nullptr.fgol.common.JsonConfig
+import icu.nullptr.fgol.service.ConfigManager
+import icu.nullptr.fgol.ui.util.navController
+import icu.nullptr.fgol.ui.util.setupToolbar
+import icu.nullptr.fgol.ui.viewmodel.AppSettingsViewModel
+import icu.nullptr.fgol.util.PackageHelper
 
 class AppSettingsFragment : Fragment(R.layout.fragment_settings) {
 

@@ -1,12 +1,12 @@
-package icu.nullptr.hidemyapplist.service
+package icu.nullptr.fgol.service
 
 import android.os.Build
 import android.util.Log
-import com.tsng.hidemyapplist.R
-import icu.nullptr.hidemyapplist.common.BuildConfig
-import icu.nullptr.hidemyapplist.common.JsonConfig
-import icu.nullptr.hidemyapplist.hmaApp
-import icu.nullptr.hidemyapplist.ui.util.makeToast
+import com.ss.fgol.R
+import icu.nullptr.fgol.common.BuildConfig
+import icu.nullptr.fgol.common.JsonConfig
+import icu.nullptr.fgol.ypwApp
+import icu.nullptr.fgol.ui.util.makeToast
 import java.io.File
 
 object ConfigManager {
@@ -15,7 +15,7 @@ object ConfigManager {
 
     private const val TAG = "ConfigManager"
     private lateinit var config: JsonConfig
-    val configFile = File("${hmaApp.filesDir.absolutePath}/config.json")
+    val configFile = File("${ypwApp.filesDir.absolutePath}/config.json")
 
     fun init() {
         if (!configFile.exists()) {

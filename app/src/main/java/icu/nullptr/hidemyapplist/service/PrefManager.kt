@@ -1,10 +1,10 @@
-package icu.nullptr.hidemyapplist.service
+package icu.nullptr.fgol.service
 
 import android.content.ComponentName
 import android.content.Context.MODE_PRIVATE
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatDelegate
-import icu.nullptr.hidemyapplist.hmaApp
+import icu.nullptr.fgol.ypwApp
 
 object PrefManager {
 
@@ -31,7 +31,7 @@ object PrefManager {
         BY_LABEL, BY_PACKAGE_NAME, BY_INSTALL_TIME, BY_UPDATE_TIME
     }
 
-    private val pref = hmaApp.getSharedPreferences("settings", MODE_PRIVATE)
+    private val pref = ypwApp.getSharedPreferences("settings", MODE_PRIVATE)
 
     var lastVersion: Int
         get() = pref.getInt(PREF_LAST_VERSION, 0)
@@ -61,11 +61,11 @@ object PrefManager {
         get() = pref.getBoolean(PREF_HIDE_ICON, false)
         set(value) {
             pref.edit().putBoolean(PREF_HIDE_ICON, value).apply()
-            val component = ComponentName(hmaApp, "com.tsng.hidemyapplist.MainActivityLauncher")
+            val component = ComponentName(ypwApp, "com.ss.fgol.MainActivityLauncher")
             val status =
                 if (value) PackageManager.COMPONENT_ENABLED_STATE_DISABLED
                 else PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-            hmaApp.packageManager.setComponentEnabledSetting(component, status, PackageManager.DONT_KILL_APP)
+            ypwApp.packageManager.setComponentEnabledSetting(component, status, PackageManager.DONT_KILL_APP)
         }
 
     var disableUpdate: Boolean

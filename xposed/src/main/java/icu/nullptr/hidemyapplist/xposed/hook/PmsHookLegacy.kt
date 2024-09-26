@@ -1,4 +1,4 @@
-package icu.nullptr.hidemyapplist.xposed.hook
+package icu.nullptr.fgol.xposed.hook
 
 import android.content.ComponentName
 import android.content.Intent
@@ -6,15 +6,15 @@ import com.github.kyuubiran.ezxhelper.utils.hookAfter
 import com.github.kyuubiran.ezxhelper.utils.invokeMethodAs
 import com.github.kyuubiran.ezxhelper.utils.loadClass
 import de.robv.android.xposed.XC_MethodHook
-import icu.nullptr.hidemyapplist.common.Constants
-import icu.nullptr.hidemyapplist.xposed.HMAService
-import icu.nullptr.hidemyapplist.xposed.Utils
-import icu.nullptr.hidemyapplist.xposed.Utils.getBinderCaller
-import icu.nullptr.hidemyapplist.xposed.logD
-import icu.nullptr.hidemyapplist.xposed.logI
+import icu.nullptr.fgol.common.Constants
+import icu.nullptr.fgol.xposed.YPWService
+import icu.nullptr.fgol.xposed.Utils
+import icu.nullptr.fgol.xposed.Utils.getBinderCaller
+import icu.nullptr.fgol.xposed.logD
+import icu.nullptr.fgol.xposed.logI
 import java.lang.reflect.Method
 
-class PmsHookLegacy(private val service: HMAService) : IFrameworkHook {
+class PmsHookLegacy(private val service: YPWService) : IFrameworkHook {
 
     companion object {
         private const val TAG = "PmsHookLegacy"

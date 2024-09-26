@@ -1,4 +1,4 @@
-package icu.nullptr.hidemyapplist.xposed
+package icu.nullptr.fgol.xposed
 
 import android.util.Log
 import de.robv.android.xposed.XposedBridge
@@ -21,9 +21,9 @@ private fun parseLog(level: Int, tag: String, msg: String, cause: Throwable? = n
 }
 
 private fun log(level: Int, tag: String, msg: String, cause: Throwable? = null) {
-    if (level <= Log.DEBUG && HMAService.instance?.config?.detailLog == false) return
+    if (level <= Log.DEBUG && YPWService.instance?.config?.detailLog == false) return
     val parsedLog = parseLog(level, tag, msg, cause)
-    HMAService.instance?.addLog(parsedLog)
+    YPWService.instance?.addLog(parsedLog)
     XposedBridge.log(parsedLog)
 }
 

@@ -18,7 +18,7 @@ if (officialBuild) {
 }
 
 android {
-    namespace = "com.tsng.hidemyapplist"
+    namespace = "com.ss.fgol"
 
     buildFeatures {
         buildConfig = true
@@ -33,7 +33,7 @@ kotlin {
 autoResConfig {
     generateClass.set(true)
     generateRes.set(false)
-    generatedClassFullName.set("icu.nullptr.hidemyapplist.util.LangList")
+    generatedClassFullName.set("icu.nullptr.fgol.util.LangList")
     generatedArrayFirstItem.set("SYSTEM")
 }
 
@@ -80,7 +80,7 @@ fun afterEval() = android.applicationVariants.forEach { variant ->
         dependsOn("assemble$variantCapped")
         from(layout.buildDirectory.dir("outputs/apk/$variantLowered"))
         into(layout.buildDirectory.dir("apk/$variantLowered"))
-        rename(".*.apk", "HMA-V${variant.versionName}-${variant.buildType.name}.apk")
+        rename(".*.apk", "YPW-V${variant.versionName}-${variant.buildType.name}.apk")
     }
 }
 

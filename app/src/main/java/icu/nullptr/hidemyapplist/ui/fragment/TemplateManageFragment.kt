@@ -1,4 +1,4 @@
-package icu.nullptr.hidemyapplist.ui.fragment
+package icu.nullptr.fgol.ui.fragment
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,13 +11,13 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.transition.MaterialContainerTransform
-import com.tsng.hidemyapplist.R
-import com.tsng.hidemyapplist.databinding.FragmentTemplateManageBinding
-import icu.nullptr.hidemyapplist.common.JsonConfig
-import icu.nullptr.hidemyapplist.service.ConfigManager
-import icu.nullptr.hidemyapplist.ui.adapter.TemplateAdapter
-import icu.nullptr.hidemyapplist.ui.util.navController
-import icu.nullptr.hidemyapplist.ui.util.setupToolbar
+import com.ss.fgol.R
+import com.ss.fgol.databinding.FragmentTemplateManageBinding
+import icu.nullptr.fgol.common.JsonConfig
+import icu.nullptr.fgol.service.ConfigManager
+import icu.nullptr.fgol.ui.adapter.TemplateAdapter
+import icu.nullptr.fgol.ui.util.navController
+import icu.nullptr.fgol.ui.util.setupToolbar
 
 class TemplateManageFragment : Fragment(R.layout.fragment_template_manage) {
 

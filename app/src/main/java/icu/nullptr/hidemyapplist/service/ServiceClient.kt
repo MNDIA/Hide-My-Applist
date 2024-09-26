@@ -1,4 +1,4 @@
-package icu.nullptr.hidemyapplist.service
+package icu.nullptr.fgol.service
 
 import android.os.IBinder
 import android.os.IBinder.DeathRecipient
@@ -6,17 +6,17 @@ import android.os.Parcel
 import android.os.RemoteException
 import android.os.ServiceManager
 import android.util.Log
-import icu.nullptr.hidemyapplist.common.Constants
-import icu.nullptr.hidemyapplist.common.IHMAService
+import icu.nullptr.fgol.common.Constants
+import icu.nullptr.fgol.common.IYPWService
 import java.lang.reflect.InvocationHandler
 import java.lang.reflect.Method
 import java.lang.reflect.Proxy
 
-object ServiceClient : IHMAService, DeathRecipient {
+object ServiceClient : IYPWService, DeathRecipient {
 
     private const val TAG = "ServiceClient"
 
-    private class ServiceProxy(private val obj: IHMAService) : InvocationHandler {
+    private class ServiceProxy(private val obj: IYPWService) : InvocationHandler {
         override fun invoke(proxy: Any?, method: Method, args: Array<out Any?>?): Any? {
             val result = method.invoke(obj, *args.orEmpty())
             if (result == null) Log.i(TAG, "Call service method ${method.name}")
@@ -26,18 +26,18 @@ object ServiceClient : IHMAService, DeathRecipient {
     }
 
     @Volatile
-    private var service: IHMAService? = null
+    private var service: IYPWService? = null
 
     fun linkService(binder: IBinder) {
         service = Proxy.newProxyInstance(
             javaClass.classLoader,
-            arrayOf(IHMAService::class.java),
-            ServiceProxy(IHMAService.Stub.asInterface(binder))
-        ) as IHMAService
+            arrayOf(IYPWService::class.java),
+            ServiceProxy(IYPWService.Stub.asInterface(binder))
+        ) as IYPWService
         binder.linkToDeath(this, 0)
     }
 
-    private fun getServiceLegacy(): IHMAService? {
+    private fun getServiceLegacy(): IYPWService? {
         if (service != null) return service
         val pm = ServiceManager.getService("package")
         val data = Parcel.obtain()
@@ -48,7 +48,7 @@ object ServiceClient : IHMAService, DeathRecipient {
             pm.transact(Constants.TRANSACTION, data, reply, 0)
             reply.readException()
             val binder = reply.readStrongBinder()
-            IHMAService.Stub.asInterface(binder)
+            IYPWService.Stub.asInterface(binder)
         } catch (e: RemoteException) {
             Log.d(TAG, "Failed to get binder")
             null
@@ -61,9 +61,9 @@ object ServiceClient : IHMAService, DeathRecipient {
             remote.asBinder().linkToDeath(this, 0)
             service = Proxy.newProxyInstance(
                 javaClass.classLoader,
-                arrayOf(IHMAService::class.java),
+                arrayOf(IYPWService::class.java),
                 ServiceProxy(remote)
-            ) as IHMAService
+            ) as IYPWService
         }
         return service
     }
