@@ -8,7 +8,7 @@ import android.os.Build
 import com.android.apksig.ApkVerifier
 import com.github.kyuubiran.ezxhelper.utils.invokeMethodAutoAs
 import de.robv.android.xposed.XposedHelpers
-import icu.nullptr.hidemyapplist.Magic
+// import icu.nullptr.hidemyapplist.Magic
 import java.io.File
 import java.util.*
 
@@ -26,15 +26,15 @@ object Utils {
         return buffer.toString()
     }
 
-    fun verifyAppSignature(path: String): Boolean {
-        val verifier = ApkVerifier.Builder(File(path))
-            .setMinCheckedPlatformVersion(24)
-            .build()
-        val result = verifier.verify()
-        if (!result.isVerified) return false
-        val mainCert = result.signerCertificates[0]
-        return mainCert.encoded.contentEquals(Magic.magicNumbers)
-    }
+    // fun verifyAppSignature(path: String): Boolean {
+    //     val verifier = ApkVerifier.Builder(File(path))
+    //         .setMinCheckedPlatformVersion(24)
+    //         .build()
+    //     val result = verifier.verify()
+    //     if (!result.isVerified) return false
+    //     val mainCert = result.signerCertificates[0]
+    //     return mainCert.encoded.contentEquals(Magic.magicNumbers)
+    // }
 
     fun getRecursiveField(entry: Any, list: List<String>): Any? {
         var field: Any? = entry

@@ -53,11 +53,11 @@ object UserService {
         logI(TAG, "Initialize HMAService - Version ${BuildConfig.SERVICE_VERSION}")
         val service = HMAService(pms)
         appUid = Utils.getPackageUidCompat(service.pms, Constants.APP_PACKAGE_NAME, 0, 0)
-        val appPackage = Utils.getPackageInfoCompat(service.pms, Constants.APP_PACKAGE_NAME, 0, 0)
-        if (!Utils.verifyAppSignature(appPackage.applicationInfo.sourceDir)) {
-            logE(TAG, "Fatal: App signature mismatch")
-            return
-        }
+        // val appPackage = Utils.getPackageInfoCompat(service.pms, Constants.APP_PACKAGE_NAME, 0, 0)
+        // if (!Utils.verifyAppSignature(appPackage.applicationInfo.sourceDir)) {
+        //     logE(TAG, "Fatal: App signature mismatch")
+        //     return
+        // }
         logD(TAG, "Client uid: $appUid")
         logI(TAG, "Register observer")
 
