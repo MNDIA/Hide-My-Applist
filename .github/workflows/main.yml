@@ -81,3 +81,12 @@ jobs:
           name: mappings
           path: "app/build/outputs/mapping/release"
 
+      - name: Create GitHub Release
+        if: github.ref == 'refs/heads/master' && success()
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            app/build/apk/release/HMA*-release.apk
+            app/build/apk/debug/HMA*-debug.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
