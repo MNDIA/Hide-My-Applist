@@ -81,16 +81,18 @@ jobs:
           name: mappings
           path: "app/build/outputs/mapping/release"
 
-      - name: Upload APKs to Release
-        uses: softprops/action-gh-release@v1
+      - name: Create Tag
+        run: |
+          TAG_NAME="v3.2.$(date +'%Y%m%d%H%M%S')"
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             app/build/apk/release/HMA*-release.apk
             app/build/apk/debug/HMA*-debug.apk
-          name: APKs-${{ github.run_id }}
-          tag_name: ${{ github.run_id }}
-          body: |
-            Commit 1b2a52e.原始版本去除签名
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
