@@ -1,10 +1,10 @@
-package icu.nullptr.fgol.ui.adapter
+package icu.nullptr.hidemyapplist.ui.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ss.fgol.R
-import icu.nullptr.fgol.service.ConfigManager
-import icu.nullptr.fgol.ui.view.ListItemView
+import com.tsng.hidemyapplist.R
+import icu.nullptr.hidemyapplist.service.ConfigManager
+import icu.nullptr.hidemyapplist.ui.view.ListItemView
 import java.text.Collator
 import java.util.*
 

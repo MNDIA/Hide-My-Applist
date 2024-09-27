@@ -1,17 +1,17 @@
-package icu.nullptr.fgol.xposed
+package icu.nullptr.hidemyapplist.xposed
 
 import android.content.pm.ApplicationInfo
 import android.content.pm.IPackageManager
 import android.os.Build
-import icu.nullptr.fgol.common.*
-import icu.nullptr.fgol.xposed.hook.*
+import icu.nullptr.hidemyapplist.common.*
+import icu.nullptr.hidemyapplist.xposed.hook.*
 import java.io.File
 
-class YPWService(val pms: IPackageManager) : IYPWService.Stub() {
+class HMAService(val pms: IPackageManager) : IHMAService.Stub() {
 
     companion object {
-        private const val TAG = "YPW-Service"
-        var instance: YPWService? = null
+        private const val TAG = "HMA-Service"
+        var instance: HMAService? = null
     }
 
     @Volatile
@@ -46,7 +46,7 @@ class YPWService(val pms: IPackageManager) : IYPWService.Stub() {
         instance = this
         loadConfig()
         installHooks()
-        logI(TAG, "YPW service initialized")
+        logI(TAG, "HMA service initialized")
     }
 
     private fun searchDataDir() {
@@ -128,7 +128,7 @@ class YPWService(val pms: IPackageManager) : IYPWService.Stub() {
     fun shouldHide(caller: String?, query: String?): Boolean {
         if (caller == null || query == null) return false
         if (caller in Constants.packagesShouldNotHide || query in Constants.packagesShouldNotHide) return false
-        if ((caller == Constants.GMS_PACKAGE_NAME || caller == Constants.GSF_PACKAGE_NAME) && query == Constants.APP_PACKAGE_NAME) return false // If apply hide on gms, ypw app will crash 😓
+        if ((caller == Constants.GMS_PACKAGE_NAME || caller == Constants.GSF_PACKAGE_NAME) && query == Constants.APP_PACKAGE_NAME) return false // If apply hide on gms, hma app will crash 😓
         if (caller in query) return false
         val appConfig = config.scope[caller] ?: return false
         if (appConfig.useWhitelist && appConfig.excludeSystemApps && query in systemApps) return false

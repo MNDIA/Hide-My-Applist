@@ -1,13 +1,13 @@
-package icu.nullptr.fgol.ui.util
+package icu.nullptr.hidemyapplist.ui.util
 
 import android.widget.Toast
 import androidx.annotation.StringRes
-import icu.nullptr.fgol.ypwApp
+import icu.nullptr.hidemyapplist.hmaApp
 
 fun makeToast(@StringRes resId: Int) {
-    Toast.makeText(ypwApp, resId, Toast.LENGTH_SHORT).show()
+    Toast.makeText(hmaApp, resId, Toast.LENGTH_SHORT).show()
 }
 
 fun makeToast(text: CharSequence) {
-    Toast.makeText(ypwApp, text, Toast.LENGTH_SHORT).show()
+    Toast.makeText(hmaApp, text, Toast.LENGTH_SHORT).show()
 }

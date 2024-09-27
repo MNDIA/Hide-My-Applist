@@ -53,27 +53,27 @@ jobs:
         id: buildRelease
         run: |
           ./gradlew :app:buildRelease
-          echo "releaseName=$(ls app/build/apk/release/YPW*-release.apk | awk -F '(/|.apk)' '{print $5}')" >> $GITHUB_OUTPUT
+          echo "releaseName=$(ls app/build/apk/release/HMA*-release.apk | awk -F '(/|.apk)' '{print $5}')" >> $GITHUB_OUTPUT
 
       - name: Build debug
         id: buildDebug
         run: |
           ./gradlew :app:buildDebug
-          echo "debugName=$(ls app/build/apk/debug/YPW*-debug.apk | awk -F '(/|.apk)' '{print $5}')" >> $GITHUB_OUTPUT
+          echo "debugName=$(ls app/build/apk/debug/HMA*-debug.apk | awk -F '(/|.apk)' '{print $5}')" >> $GITHUB_OUTPUT
 
       - name: Upload release
         if: success()
         uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.buildRelease.outputs.releaseName }}
-          path: "app/build/apk/release/YPW*-release.apk"
+          path: "app/build/apk/release/HMA*-release.apk"
 
       - name: Upload debug
         if: success()
         uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.buildDebug.outputs.debugName }}
-          path: "app/build/apk/debug/YPW*-debug.apk"
+          path: "app/build/apk/debug/HMA*-debug.apk"
 
       - name: Upload mappings
         uses: actions/upload-artifact@v3
@@ -85,12 +85,12 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            app/build/apk/release/YPW*-release.apk
-            app/build/apk/debug/YPW*-debug.apk
+            app/build/apk/release/HMA*-release.apk
+            app/build/apk/debug/HMA*-debug.apk
           name: APKs-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
           body: |
-            更换包名
+            Commit 1b2a52e.原始版本去除签名
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         

@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.util
+package icu.nullptr.hidemyapplist.util
 
 import com.topjohnwu.superuser.Shell
 

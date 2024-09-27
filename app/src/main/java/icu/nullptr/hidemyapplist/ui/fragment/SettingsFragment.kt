@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.ui.fragment
+package icu.nullptr.hidemyapplist.ui.fragment
 
 import android.content.Intent
 import android.os.Build
@@ -15,18 +15,18 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.ss.fgol.R
-import com.ss.fgol.databinding.FragmentSettingsBinding
-import icu.nullptr.fgol.common.CommonUtils
-import icu.nullptr.fgol.common.Constants
-import icu.nullptr.fgol.ypwApp
-import icu.nullptr.fgol.service.ConfigManager
-import icu.nullptr.fgol.service.PrefManager
-import icu.nullptr.fgol.service.ServiceClient
-import icu.nullptr.fgol.ui.util.makeToast
-import icu.nullptr.fgol.ui.util.setupToolbar
-import icu.nullptr.fgol.util.LangList
-import icu.nullptr.fgol.util.SuUtils
+import com.tsng.hidemyapplist.R
+import com.tsng.hidemyapplist.databinding.FragmentSettingsBinding
+import icu.nullptr.hidemyapplist.common.CommonUtils
+import icu.nullptr.hidemyapplist.common.Constants
+import icu.nullptr.hidemyapplist.hmaApp
+import icu.nullptr.hidemyapplist.service.ConfigManager
+import icu.nullptr.hidemyapplist.service.PrefManager
+import icu.nullptr.hidemyapplist.service.ServiceClient
+import icu.nullptr.hidemyapplist.ui.util.makeToast
+import icu.nullptr.hidemyapplist.ui.util.setupToolbar
+import icu.nullptr.hidemyapplist.util.LangList
+import icu.nullptr.hidemyapplist.util.SuUtils
 import rikka.material.app.LocaleDelegate
 import rikka.preference.SimpleMenuPreference
 import java.util.*
@@ -163,7 +163,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), PreferenceFragmen
 
             @Suppress("DEPRECATION")
             findPreference<SimpleMenuPreference>("language")?.let {
-                val userLocale = ypwApp.getLocale(PrefManager.locale)
+                val userLocale = hmaApp.getLocale(PrefManager.locale)
                 val entries = buildList {
                     for (lang in LangList.LOCALES) {
                         if (lang == "SYSTEM") add(getString(rikka.core.R.string.follow_system))
@@ -182,11 +182,11 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), PreferenceFragmen
                     it.summary = if (!TextUtils.isEmpty(locale.script)) locale.getDisplayScript(userLocale) else locale.getDisplayName(userLocale)
                 }
                 it.setOnPreferenceChangeListener { _, newValue ->
-                    val locale = ypwApp.getLocale(newValue as String)
+                    val locale = hmaApp.getLocale(newValue as String)
                     val config = resources.configuration
                     config.setLocale(locale)
                     LocaleDelegate.defaultLocale = locale
-                    ypwApp.resources.updateConfiguration(config, resources.displayMetrics)
+                    hmaApp.resources.updateConfiguration(config, resources.displayMetrics)
                     activity?.recreate()
                     true
                 }

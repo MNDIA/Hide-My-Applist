@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "icu.nullptr.fgol.xposed"
+    namespace = "icu.nullptr.hidemyapplist.xposed"
 
     buildFeatures {
         buildConfig = false

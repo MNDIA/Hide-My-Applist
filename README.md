@@ -1,4 +1,4 @@
-# Yee Pee
+# Hide My Applist
 ![banner](banner.png)
 非官方构建
 
@@ -23,7 +23,7 @@ Hide-My-Applist
 │        ├─ java
 │        │  └─ icu
 │        │     └─ nullptr
-│        │        └─ fgol
+│        │        └─ hidemyapplist
 │        │           ├─ MyApp.kt
 │        │           ├─ data
 │        │           │  └─ UpdateInfo.kt
@@ -177,13 +177,13 @@ Hide-My-Applist
 │        ├─ aidl
 │        │  └─ icu
 │        │     └─ nullptr
-│        │        └─ fgol
+│        │        └─ hidemyapplist
 │        │           └─ common
-│        │              └─ IYPWService.aidl
+│        │              └─ IHMAService.aidl
 │        └─ java
 │           └─ icu
 │              └─ nullptr
-│                 └─ fgol
+│                 └─ hidemyapplist
 │                    └─ common
 │                       ├─ CommonUtils.kt
 │                       ├─ Constants.java
@@ -208,9 +208,9 @@ Hide-My-Applist
          └─ java
             └─ icu
                └─ nullptr
-                  └─ fgol
+                  └─ hidemyapplist
                      └─ xposed
-                        ├─ YPWService.kt
+                        ├─ HMAService.kt
                         ├─ Logcat.kt
                         ├─ UserService.kt
                         ├─ Utils.kt

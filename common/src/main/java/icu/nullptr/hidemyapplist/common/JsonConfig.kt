@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.common
+package icu.nullptr.hidemyapplist.common
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString

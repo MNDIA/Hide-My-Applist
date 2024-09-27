@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.service
+package icu.nullptr.hidemyapplist.service
 
 import android.content.ContentProvider
 import android.content.ContentValues

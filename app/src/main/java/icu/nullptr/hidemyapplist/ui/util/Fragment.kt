@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.ui.util
+package icu.nullptr.hidemyapplist.ui.util
 
 import android.os.Build
 import android.view.Menu

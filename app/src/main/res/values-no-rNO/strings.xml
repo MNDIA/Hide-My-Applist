@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Yee Pee</string>
+    <string name="app_name">Hide My Applist</string>
     <string name="title_home">Hjem</string>
     <string name="title_logs">Logger</string>
     <string name="title_settings">Innstillinger</string>
@@ -10,7 +10,7 @@
     <string name="title_app_select">Velg applikasjoner</string>
     <string name="title_app_settings">Applikasjon innstillinger</string>
     <string name="title_about">Info</string>
-    <string name="do_not_dual">Ikke installer YPW til en sekundær bruker</string>
+    <string name="do_not_dual">Ikke installer HMA til en sekundær bruker</string>
     <string name="show_crash_log">Show crash log</string>
     <string name="config_damaged">Config file damaged. Please clean the app data</string>
     <string name="edit_list">Edit list</string>

@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.ui.view
+package icu.nullptr.hidemyapplist.ui.view
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,8 +6,8 @@ import android.widget.LinearLayout
 import androidx.annotation.DrawableRes
 import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.ss.fgol.R
-import com.ss.fgol.databinding.ListItemViewBinding
+import com.tsng.hidemyapplist.R
+import com.tsng.hidemyapplist.databinding.ListItemViewBinding
 
 class ListItemView @JvmOverloads constructor(
     context: Context,

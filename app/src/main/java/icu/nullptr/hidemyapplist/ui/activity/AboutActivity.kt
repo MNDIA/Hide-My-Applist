@@ -1,11 +1,11 @@
-package icu.nullptr.fgol.ui.activity
+package icu.nullptr.hidemyapplist.ui.activity
 
 import android.annotation.SuppressLint
 import android.widget.ImageView
 import android.widget.TextView
 import com.drakeet.about.*
-import com.ss.fgol.BuildConfig
-import com.ss.fgol.R
+import com.tsng.hidemyapplist.BuildConfig
+import com.tsng.hidemyapplist.R
 
 class AboutActivity : AbsAboutActivity() {
 
@@ -39,7 +39,7 @@ class AboutActivity : AbsAboutActivity() {
         items.add(Line())
         items.add(Card("Telegram\nhttps://t.me/HideMyApplist"))
         items.add(Line())
-        items.add(Card("Play store\nhttps://play.google.com/store/apps/details?id=com.ss.fgol"))
+        items.add(Card("Play store\nhttps://play.google.com/store/apps/details?id=com.tsng.hidemyapplist"))
 
         items.add(Category(getString(R.string.about_open_source)))
         items.add(License("MultiType", "drakeet", License.APACHE_2, "https://github.com/drakeet/MultiType"))

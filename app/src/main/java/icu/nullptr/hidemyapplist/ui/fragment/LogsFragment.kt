@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.ui.fragment
+package icu.nullptr.hidemyapplist.ui.fragment
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,14 +9,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.ss.fgol.R
-import com.ss.fgol.databinding.FragmentLogsBinding
-import icu.nullptr.fgol.ypwApp
-import icu.nullptr.fgol.service.PrefManager
-import icu.nullptr.fgol.service.ServiceClient
-import icu.nullptr.fgol.ui.adapter.LogAdapter
-import icu.nullptr.fgol.ui.util.makeToast
-import icu.nullptr.fgol.ui.util.setupToolbar
+import com.tsng.hidemyapplist.R
+import com.tsng.hidemyapplist.databinding.FragmentLogsBinding
+import icu.nullptr.hidemyapplist.hmaApp
+import icu.nullptr.hidemyapplist.service.PrefManager
+import icu.nullptr.hidemyapplist.service.ServiceClient
+import icu.nullptr.hidemyapplist.ui.adapter.LogAdapter
+import icu.nullptr.hidemyapplist.ui.util.makeToast
+import icu.nullptr.hidemyapplist.ui.util.setupToolbar
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
@@ -35,7 +35,7 @@ class LogsFragment : Fragment(R.layout.fragment_logs) {
                 makeToast(R.string.logs_empty)
                 return@save
             }
-            ypwApp.contentResolver.openOutputStream(uri).use { output ->
+            hmaApp.contentResolver.openOutputStream(uri).use { output ->
                 if (output == null) makeToast(R.string.home_export_failed)
                 else output.write(logCache!!.toByteArray())
             }
@@ -77,7 +77,7 @@ class LogsFragment : Fragment(R.layout.fragment_logs) {
             R.id.menu_refresh -> updateLogs()
             R.id.menu_save -> {
                 val date = SimpleDateFormat("yyyy-MM-dd_HH.mm.ss", Locale.getDefault()).format(Date())
-                saveSAFLauncher.launch("ypw_logs_$date.log")
+                saveSAFLauncher.launch("hma_logs_$date.log")
             }
             R.id.menu_delete -> {
                 ServiceClient.clearLogs()

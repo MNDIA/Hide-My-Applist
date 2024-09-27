@@ -1,6 +1,6 @@
-package icu.nullptr.fgol.common;
+package icu.nullptr.hidemyapplist.common;
 
-interface IYPWService {
+interface IHMAService {
 
     void stopService(boolean cleanEnv) = 0;
 

@@ -1,7 +1,7 @@
-package icu.nullptr.fgol.ui.adapter
+package icu.nullptr.hidemyapplist.ui.adapter
 
 import android.view.ViewGroup
-import icu.nullptr.fgol.ui.view.AppItemView
+import icu.nullptr.hidemyapplist.ui.view.AppItemView
 
 class AppScopeAdapter(
     private val checked: MutableSet<String>,

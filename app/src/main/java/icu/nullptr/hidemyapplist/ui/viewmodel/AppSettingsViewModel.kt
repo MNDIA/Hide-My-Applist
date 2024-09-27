@@ -1,8 +1,8 @@
-package icu.nullptr.fgol.ui.viewmodel
+package icu.nullptr.hidemyapplist.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import icu.nullptr.fgol.common.JsonConfig
+import icu.nullptr.hidemyapplist.common.JsonConfig
 
 class AppSettingsViewModel(val pack: Pack) : ViewModel() {
 

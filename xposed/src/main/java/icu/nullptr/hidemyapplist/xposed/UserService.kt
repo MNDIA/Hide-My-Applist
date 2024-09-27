@@ -1,4 +1,4 @@
-package icu.nullptr.fgol.xposed
+package icu.nullptr.hidemyapplist.xposed
 
 import android.app.ActivityManagerHidden
 import android.content.AttributionSource
@@ -6,14 +6,14 @@ import android.content.pm.IPackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.ServiceManager
-import icu.nullptr.fgol.common.BuildConfig
-import icu.nullptr.fgol.common.Constants
+import icu.nullptr.hidemyapplist.common.BuildConfig
+import icu.nullptr.hidemyapplist.common.Constants
 import rikka.hidden.compat.ActivityManagerApis
 import rikka.hidden.compat.adapter.UidObserverAdapter
 
 object UserService {
 
-    private const val TAG = "YPW-UserService"
+    private const val TAG = "HMA-UserService"
 
     private var appUid = 0
 
@@ -27,7 +27,7 @@ object UserService {
                     return
                 }
                 val extras = Bundle()
-                extras.putBinder("binder", YPWService.instance)
+                extras.putBinder("binder", HMAService.instance)
                 val reply = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                     val attr = AttributionSource.Builder(1000).setPackageName("android").build()
                     provider.call(attr, Constants.PROVIDER_AUTHORITY, "", null, extras)
@@ -50,8 +50,8 @@ object UserService {
     }
 
     fun register(pms: IPackageManager) {
-        logI(TAG, "Initialize YPWService - Version ${BuildConfig.SERVICE_VERSION}")
-        val service = YPWService(pms)
+        logI(TAG, "Initialize HMAService - Version ${BuildConfig.SERVICE_VERSION}")
+        val service = HMAService(pms)
         appUid = Utils.getPackageUidCompat(service.pms, Constants.APP_PACKAGE_NAME, 0, 0)
         // val appPackage = Utils.getPackageInfoCompat(service.pms, Constants.APP_PACKAGE_NAME, 0, 0)
         // if (!Utils.verifyAppSignature(appPackage.applicationInfo.sourceDir)) {
