@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hide My Applist</string>
+    <string name="app_name">Yee Pee</string>
     <string name="title_home">Domů</string>
     <string name="title_logs">Logy</string>
     <string name="title_settings">Nastavení</string>
@@ -10,7 +10,7 @@
     <string name="title_app_select">Vybrat aplikace</string>
     <string name="title_app_settings">Nastavení aplikace</string>
     <string name="title_about">O aplikaci</string>
-    <string name="do_not_dual">Neinstalujte HMA na jiném uživateli</string>
+    <string name="do_not_dual">Neinstalujte YEP na jiném uživateli</string>
     <string name="show_crash_log">Zobrazit protokol o selhání</string>
     <string name="config_damaged">Poškozený konfigurační soubor. Vyčistěte prosím data aplikace</string>
     <string name="edit_list">Upravit seznam</string>
@@ -34,7 +34,7 @@
     <string name="home_xposed_service_on">Systémová služba běží [%d]</string>
     <string name="home_xposed_service_off">Systémová služba neběží</string>
     <string name="home_xposed_service_old">Modul aktualizován, je třeba restartovat</string>
-    <string name="home_xposed_filter_count">Hide My Applist odfiltroval celkem %d požadavků</string>
+    <string name="home_xposed_filter_count">Yee Pee odfiltroval celkem %d požadavků</string>
     <string name="home_manage">Spravovat</string>
     <string name="home_detection_test">Detekční test</string>
     <string name="home_download_test_app_title">Stáhněte si testovací aplikaci</string>
@@ -99,8 +99,8 @@
     <string name="settings_force_mount_data_summary">Data isolation is disabled for apps target API lower than 30 by default</string>
     <string name="settings_detail_log">Podrobný protokol pro ladění</string>
     <string name="settings_max_log_size">Protokol velikosti vyrovnávací paměti</string>
-    <string name="settings_hide_icon">Skrýt ikonu modulu ve spouštěči</string>
-    <string name="settings_hide_icon_summary">Aplikaci můžete stále otevřít ve správci Xposed</string>
+    <string name="settings_yhide_icon">Skrýt ikonu modulu ve spouštěči</string>
+    <string name="settings_yhide_icon_summary">Aplikaci můžete stále otevřít ve správci Xposed</string>
     <string name="settings_language">Jazyk</string>
     <string name="settings_translate">Podílet se na překladu</string>
     <string name="settings_translate_summary">Pomozte nám přeložit %s do vašeho jazyka</string>
@@ -114,7 +114,7 @@
     <string name="settings_stop_system_service">Zastavit systémovou službu</string>
     <string name="settings_stop_system_service_summary">K restartování služby je třeba restartovat</string>
     <string name="settings_is_clean_env">Vyčistit runtime prostředí ve stejnou dobu?</string>
-    <string name="settings_is_clean_env_summary">Odeberte mezipaměť systémové služby v /data/system/hide_my_applist_*. To znamená, že musíte po příštím restartu spustit aplikaci modulu jednou ručně, abyste povolili odposlechy a počty odposlechů budou také vyčištěny.</string>
+    <string name="settings_is_clean_env_summary">Odeberte mezipaměť systémové služby v /data/system/yhide_my_applist_*. To znamená, že musíte po příštím restartu spustit aplikaci modulu jednou ručně, abyste povolili odposlechy a počty odposlechů budou také vyčištěny.</string>
     <string name="settings_force_clean_env">Force clean runtime environment (root)</string>
     <string name="settings_force_clean_env_summary">Only if system service fails to start, otherwise you should click the above option.</string>
     <string name="settings_force_clean_env_toast_successful">Runtime environment cleaned</string>

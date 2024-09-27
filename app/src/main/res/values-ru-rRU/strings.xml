@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hide My Applist</string>
+    <string name="app_name">Yee Pee</string>
     <string name="title_home">Главная</string>
     <string name="title_logs">Логи</string>
     <string name="title_settings">Настройки</string>
@@ -10,7 +10,7 @@
     <string name="title_app_select">Выберите приложения</string>
     <string name="title_app_settings">Настройки приложения</string>
     <string name="title_about">О модуле</string>
-    <string name="do_not_dual">Не устанавливать HMA для второго пользователя</string>
+    <string name="do_not_dual">Не устанавливать YEP для второго пользователя</string>
     <string name="show_crash_log">Показывать логи вылета</string>
     <string name="config_damaged">Файл настроек повреждён. Пожалуйста, очистите данные приложения</string>
     <string name="edit_list">Редактировать список</string>
@@ -34,7 +34,7 @@
     <string name="home_xposed_service_on">Системная служба работает [%d]</string>
     <string name="home_xposed_service_off">Системная служба не работает</string>
     <string name="home_xposed_service_old">Модуль был обновлён, требуется перезагрузка</string>
-    <string name="home_xposed_filter_count">Всего Hide My Applist отфильтровал %d запросов</string>
+    <string name="home_xposed_filter_count">Всего Yee Pee отфильтровал %d запросов</string>
     <string name="home_manage">Управление</string>
     <string name="home_detection_test">Проверка на обнаружение</string>
     <string name="home_download_test_app_title">Скачать приложение для проверки</string>
@@ -99,8 +99,8 @@
     <string name="settings_force_mount_data_summary">Изоляция данных для приложений с targetAPI ниже 30 отключена по умолчанию</string>
     <string name="settings_detail_log">Подробные логи для отладки</string>
     <string name="settings_max_log_size">Размер буфера логов</string>
-    <string name="settings_hide_icon">Скрыть иконку модуля на главном экране</string>
-    <string name="settings_hide_icon_summary">Вы всё ещё сможете открывать приложение в Xposed менеджере</string>
+    <string name="settings_yhide_icon">Скрыть иконку модуля на главном экране</string>
+    <string name="settings_yhide_icon_summary">Вы всё ещё сможете открывать приложение в Xposed менеджере</string>
     <string name="settings_language">Язык</string>
     <string name="settings_translate">Принять участие в переводе</string>
     <string name="settings_translate_summary">Помогите нам перевести %s на ваш язык</string>
@@ -114,7 +114,7 @@
     <string name="settings_stop_system_service">Остановить системную службу</string>
     <string name="settings_stop_system_service_summary">Потребуется перезагрузка, чтобы перезапустить службу</string>
     <string name="settings_is_clean_env">Очистить также среду выполнения?</string>
-    <string name="settings_is_clean_env_summary">Удалить кэш системной службы в /data/system/hide_my_applist_*. Это означает, что вам нужно запустить приложение модуля вручную после следующей перезагрузки, чтобы включить перехваты, и количество перехватов также будет очищено.</string>
+    <string name="settings_is_clean_env_summary">Удалить кэш системной службы в /data/system/yhide_my_applist_*. Это означает, что вам нужно запустить приложение модуля вручную после следующей перезагрузки, чтобы включить перехваты, и количество перехватов также будет очищено.</string>
     <string name="settings_force_clean_env">Принудительно очистить среду выполнения (root)</string>
     <string name="settings_force_clean_env_summary">Только если не удается запустить системную службу, в противном случае вам следует нажать на опцию выше.</string>
     <string name="settings_force_clean_env_toast_successful">Среда выполнения очищена успешно</string>

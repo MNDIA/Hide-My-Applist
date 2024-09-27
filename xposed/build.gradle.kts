@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "icu.nullptr.hidemyapplist.xposed"
+    namespace = "icu.andorid.yeepee.xposed"
 
     buildFeatures {
         buildConfig = false

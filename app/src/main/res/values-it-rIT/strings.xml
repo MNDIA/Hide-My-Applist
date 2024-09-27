@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hide My Applist</string>
+    <string name="app_name">Yee Pee</string>
     <string name="title_home">Home</string>
     <string name="title_logs">Logs</string>
     <string name="title_settings">Impostazioni</string>
@@ -10,7 +10,7 @@
     <string name="title_app_select">Seleziona applicazioni</string>
     <string name="title_app_settings">Impostazioni app</string>
     <string name="title_about">A proposito</string>
-    <string name="do_not_dual">Non installare HMA per l\'utente secondario</string>
+    <string name="do_not_dual">Non installare YEP per l\'utente secondario</string>
     <string name="show_crash_log">Mostra crash log</string>
     <string name="config_damaged">File di configurazione danneggiato. Per favore cancella i dati dell\'app</string>
     <string name="edit_list">Modifica lista</string>
@@ -34,7 +34,7 @@
     <string name="home_xposed_service_on">Servizio di sistema in esecuzione [%d]</string>
     <string name="home_xposed_service_off">Servizio di sistema stoppato</string>
     <string name="home_xposed_service_old">Modulo aggiornato, in attesa di riavvio</string>
-    <string name="home_xposed_filter_count">Hide My Applist ha filtrato in totale %d richieste</string>
+    <string name="home_xposed_filter_count">Yee Pee ha filtrato in totale %d richieste</string>
     <string name="home_manage">Gestisci</string>
     <string name="home_detection_test">Test di rilevamento</string>
     <string name="home_download_test_app_title">Scarica app di test</string>
@@ -99,8 +99,8 @@
     <string name="settings_force_mount_data_summary">Data isolation is disabled for apps target API lower than 30 by default</string>
     <string name="settings_detail_log">Log dettagliato per debugging</string>
     <string name="settings_max_log_size">Dimensione buffer log</string>
-    <string name="settings_hide_icon">Nascondi icona modulo nel launcher</string>
-    <string name="settings_hide_icon_summary">Puoi sempre aprire l\'app in Xposed manager</string>
+    <string name="settings_yhide_icon">Nascondi icona modulo nel launcher</string>
+    <string name="settings_yhide_icon_summary">Puoi sempre aprire l\'app in Xposed manager</string>
     <string name="settings_language">Lingua</string>
     <string name="settings_translate">Aiuta a tradurre</string>
     <string name="settings_translate_summary">Aiutaci a tradurre %s nella tua lingua</string>
@@ -114,7 +114,7 @@
     <string name="settings_stop_system_service">Stoppa servizio di sistema</string>
     <string name="settings_stop_system_service_summary">È necessario riavviare per riavviare il servizio</string>
     <string name="settings_is_clean_env">Pulire l\'ambiente di runtime allo stesso tempo?</string>
-    <string name="settings_is_clean_env_summary">Rimuove la cache del servizio di sistema in /data/system/hide_my_applist_*. Questo significa che è necessario avviare l\'app del modulo una volta manualmente dopo il prossimo riavvio per abilitare le intercettazioni e anche i conteggi delle intercettazioni verranno resettati.</string>
+    <string name="settings_is_clean_env_summary">Rimuove la cache del servizio di sistema in /data/system/yhide_my_applist_*. Questo significa che è necessario avviare l\'app del modulo una volta manualmente dopo il prossimo riavvio per abilitare le intercettazioni e anche i conteggi delle intercettazioni verranno resettati.</string>
     <string name="settings_force_clean_env">Forza pulizia ambiente runtime (root)</string>
     <string name="settings_force_clean_env_summary">Solo se il servizio di sistema non riesce ad avviarsi, altrimenti devi cliccare l\'opzione sopra.</string>
     <string name="settings_force_clean_env_toast_successful">Ambiente runtime pulito</string>

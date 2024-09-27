@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hide My Applist</string>
+    <string name="app_name">Yee Pee</string>
     <string name="title_home">Головна</string>
     <string name="title_logs">Журнали</string>
     <string name="title_settings">Налаштування</string>
@@ -10,7 +10,7 @@
     <string name="title_app_select">Виберіть додатки</string>
     <string name="title_app_settings">Налаштування додатка</string>
     <string name="title_about">Про додаток</string>
-    <string name="do_not_dual">Не встановлюйте HMA для додаткового користувача</string>
+    <string name="do_not_dual">Не встановлюйте YEP для додаткового користувача</string>
     <string name="show_crash_log">Показати журнал збоїв</string>
     <string name="config_damaged">Файл конфігурації пошкоджено. Очистіть дані додатку</string>
     <string name="edit_list">Редагувати список</string>
@@ -34,7 +34,7 @@
     <string name="home_xposed_service_on">Системна служба працює [%d]</string>
     <string name="home_xposed_service_off">Системна служба не працює</string>
     <string name="home_xposed_service_old">Модуль оновлено, потрібно перезавантажити</string>
-    <string name="home_xposed_filter_count">Hide My Applist відфільтрував %d запитів</string>
+    <string name="home_xposed_filter_count">Yee Pee відфільтрував %d запитів</string>
     <string name="home_manage">Керувати</string>
     <string name="home_detection_test">Перевірка на виявлення</string>
     <string name="home_download_test_app_title">Завантажити додаток для перевірки</string>
@@ -99,8 +99,8 @@
     <string name="settings_force_mount_data_summary">За замовчуванням ізоляція даних вимкнена для цільових API додатків нижче 30</string>
     <string name="settings_detail_log">Детальний журнал для налагодження</string>
     <string name="settings_max_log_size">Розміри буфера реєстратора</string>
-    <string name="settings_hide_icon">Сховати значок модуля в панелі запуску</string>
-    <string name="settings_hide_icon_summary">Ви все ще можете відкрити додаток у менеджері Xposed</string>
+    <string name="settings_yhide_icon">Сховати значок модуля в панелі запуску</string>
+    <string name="settings_yhide_icon_summary">Ви все ще можете відкрити додаток у менеджері Xposed</string>
     <string name="settings_language">Мова</string>
     <string name="settings_translate">Участь у перекладі</string>
     <string name="settings_translate_summary">Допоможіть нам перекласти %s вашою мовою</string>
@@ -114,7 +114,7 @@
     <string name="settings_stop_system_service">Зупинити системну службу</string>
     <string name="settings_stop_system_service_summary">Потрібне перезавантаження, щоб перезапустити службу</string>
     <string name="settings_is_clean_env">Очистити також середовище виконання?</string>
-    <string name="settings_is_clean_env_summary">Видаліть кеш системної служби в /data/system/hide_my_applist_*. Це означає, що вам потрібно один раз запустити програму модуля вручну після наступного перезавантаження, щоб увімкнути перехоплення, і кількість перехоплень також буде очищено.</string>
+    <string name="settings_is_clean_env_summary">Видаліть кеш системної служби в /data/system/yhide_my_applist_*. Це означає, що вам потрібно один раз запустити програму модуля вручну після наступного перезавантаження, щоб увімкнути перехоплення, і кількість перехоплень також буде очищено.</string>
     <string name="settings_force_clean_env">Примусово очистити середовище виконання (root)</string>
     <string name="settings_force_clean_env_summary">Лише якщо не вдається запустити системну службу, інакше вам слід натиснути вищезазначену опцію.</string>
     <string name="settings_force_clean_env_toast_successful">Середовище виконання очищено</string>

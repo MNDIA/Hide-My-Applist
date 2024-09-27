@@ -10,7 +10,7 @@
     <string name="title_app_select">Chọn ƯD</string>
     <string name="title_app_settings">Cài đặt ƯD</string>
     <string name="title_about">Giới thiệu</string>
-    <string name="do_not_dual">Không cài HMA lên người dùng thứ cấp</string>
+    <string name="do_not_dual">Không cài YEP lên người dùng thứ cấp</string>
     <string name="show_crash_log">Xem nhật ký lỗi</string>
     <string name="config_damaged">Chỉnh tệp đã hư. Hãy xóa dữ liệu ứng dụng</string>
     <string name="edit_list">Sửa danh sách</string>
@@ -31,10 +31,10 @@
     <!-- Home -->
     <string name="home_xposed_activated">Mô đun đã kích hoạt [%s-%d]</string>
     <string name="home_xposed_not_activated">Mô đun ko kích hoạt</string>
-    <string name="home_xposed_service_on">Dịch vụ HMA đang chạy [%d]</string>
-    <string name="home_xposed_service_off">Dịch vụ HMA không chạy</string>
+    <string name="home_xposed_service_on">Dịch vụ YEP đang chạy [%d]</string>
+    <string name="home_xposed_service_off">Dịch vụ YEP không chạy</string>
     <string name="home_xposed_service_old">Mô đun đã cập nhật, cần khởi động lại máy</string>
-    <string name="home_xposed_filter_count">Hide My Applist đã lọc tổng cộng %d yêu cầu</string>
+    <string name="home_xposed_filter_count">Yee Pee đã lọc tổng cộng %d yêu cầu</string>
     <string name="home_manage">Quản lý</string>
     <string name="home_detection_test">Kiểm thử</string>
     <string name="home_download_test_app_title">Tải ứng dụng kiểm thử</string>
@@ -99,8 +99,8 @@
     <string name="settings_force_mount_data_summary">Data isolation is disabled for apps target API lower than 30 by default</string>
     <string name="settings_detail_log">Nhật ký chi tiết gỡ lỗi</string>
     <string name="settings_max_log_size">Kích cỡ bộ đệm nhật ký</string>
-    <string name="settings_hide_icon">Ẩn mô đun trong Trình khởi chạy</string>
-    <string name="settings_hide_icon_summary">Bạn vẫn có thể mở ứng dụng trong Xposed</string>
+    <string name="settings_yhide_icon">Ẩn mô đun trong Trình khởi chạy</string>
+    <string name="settings_yhide_icon_summary">Bạn vẫn có thể mở ứng dụng trong Xposed</string>
     <string name="settings_language">Ngôn ngữ</string>
     <string name="settings_translate">Giúp chúng tôi dịch</string>
     <string name="settings_translate_summary">Giúp chúng tôi dịch %s sang ngôn ngữ của bạn</string>
@@ -114,7 +114,7 @@
     <string name="settings_stop_system_service">Dừng dịch vụ</string>
     <string name="settings_stop_system_service_summary">Cần chạy lại dịch vụ</string>
     <string name="settings_is_clean_env">Làm sạch môi trường thời gian chạy cùng lúc?</string>
-    <string name="settings_is_clean_env_summary">Xóa bộ nhớ cache của dịch vụ hệ thống trong /data/system/hide_my_applist_*. Điều này có nghĩa là bạn cần phải khởi chạy ứng dụng mô-đun một lần theo cách thủ công sau lần khởi động lại tiếp theo để cho phép đánh chặn và số lần đánh chặn cũng sẽ được xóa sạch.</string>
+    <string name="settings_is_clean_env_summary">Xóa bộ nhớ cache của dịch vụ hệ thống trong /data/system/yhide_my_applist_*. Điều này có nghĩa là bạn cần phải khởi chạy ứng dụng mô-đun một lần theo cách thủ công sau lần khởi động lại tiếp theo để cho phép đánh chặn và số lần đánh chặn cũng sẽ được xóa sạch.</string>
     <string name="settings_force_clean_env">Buộc môi trường thời gian chạy sạch (root)</string>
     <string name="settings_force_clean_env_summary">Chỉ khi dịch vụ hệ thống không khởi động được, nếu không bạn nên nhấp vào tùy chọn trên.</string>
     <string name="settings_force_clean_env_toast_successful">Môi trường Runtime đã sạch</string>

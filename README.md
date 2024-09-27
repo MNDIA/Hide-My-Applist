@@ -1,15 +1,6 @@
-# Hide My Applist
-![banner](banner.png)
+# Yee Pee
+![banner](image.png)
 非官方构建
-
-## About this module
-
-Although it's bad practice to detect the installation of specific apps, not every app using root provides random package name support. In this case, if apps related to root (such as Fake Location and Storage Isolation) are detected, it is tantamount to detecting that the device is rooted.
-
-Additionally, some apps use various loopholes to acquire your app list, in order to use it as fingerprinting data or for other nefarious purposes.
-
-This module can work as an Xposed module to hide apps or reject app list requests, and provides some methods to test whether you have hidden your app list properly.
- 
 
 ```
 Hide-My-Applist
@@ -22,8 +13,8 @@ Hide-My-Applist
 │        ├─ ic_launcher-playstore.png
 │        ├─ java
 │        │  └─ icu
-│        │     └─ nullptr
-│        │        └─ hidemyapplist
+│        │     └─ andorid
+│        │        └─ yeepee
 │        │           ├─ MyApp.kt
 │        │           ├─ data
 │        │           │  └─ UpdateInfo.kt
@@ -98,7 +89,7 @@ Hide-My-Applist
 │           │  ├─ outline_edit_24.xml
 │           │  ├─ outline_extension_off_24.xml
 │           │  ├─ outline_format_color_fill_24.xml
-│           │  ├─ outline_hide_image_24.xml
+│           │  ├─ outline_yhide_image_24.xml
 │           │  ├─ outline_home_24.xml
 │           │  ├─ outline_info_24.xml
 │           │  ├─ outline_invert_colors_24.xml
@@ -176,14 +167,14 @@ Hide-My-Applist
 │     └─ main
 │        ├─ aidl
 │        │  └─ icu
-│        │     └─ nullptr
-│        │        └─ hidemyapplist
+│        │     └─ andorid
+│        │        └─ yeepee
 │        │           └─ common
-│        │              └─ IHMAService.aidl
+│        │              └─ IYEPService.aidl
 │        └─ java
 │           └─ icu
-│              └─ nullptr
-│                 └─ hidemyapplist
+│              └─ andorid
+│                 └─ yeepee
 │                    └─ common
 │                       ├─ CommonUtils.kt
 │                       ├─ Constants.java
@@ -207,10 +198,10 @@ Hide-My-Applist
          │  └─ xposed_init
          └─ java
             └─ icu
-               └─ nullptr
-                  └─ hidemyapplist
+               └─ andorid
+                  └─ yeepee
                      └─ xposed
-                        ├─ HMAService.kt
+                        ├─ YEPService.kt
                         ├─ Logcat.kt
                         ├─ UserService.kt
                         ├─ Utils.kt
