@@ -124,6 +124,10 @@ class YEPService(val pms: IPackageManager) : IYEPService.Stub() {
     }
 
     fun isHookEnabled(packageName: String) = config.scope.containsKey(packageName)
+    fun isVoldEnabled(packageName: String) {
+        val appConfig = config.scope[packageName] ?: return false
+        return appConfig.vold ?: false
+    }
 
     fun shouldHide(caller: String?, query: String?): Boolean {
         if (caller == null || query == null) return false
