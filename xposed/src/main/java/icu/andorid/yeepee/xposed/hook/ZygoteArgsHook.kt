@@ -43,12 +43,12 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
 
                         // 获取 param.args[21] 的值并记录到日志中
                         val bindMountAppStorageDirs = param.args[21] as Boolean
-                        var mountMode = app.getMountMode() as Int//排查判断条件
+                        // var mountMode = app.getMountMode() as Int//排查判断条件
 
                         if (bindMountAppStorageDirs) {
                             logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs $mountMode")
                         } else {
-                            logW(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs $mountMode")
+                            logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs $mountMode")
                         }
                         return@hookBefore
                     }
