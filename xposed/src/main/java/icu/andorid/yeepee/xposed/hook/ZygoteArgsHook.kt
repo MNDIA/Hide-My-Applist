@@ -47,9 +47,9 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
                         var mountMode = app.getMountMode() as Int//排查判断条件
 
                         if (bindMountAppStorageDirs) {
-                            logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs ")
+                            logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs $mountMode")
                         } else {
-                            logW(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs ")
+                            logW(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs $mountMode")
                         }
                         return@hookBefore
                     }
