@@ -40,13 +40,13 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
 
                         // if (sVoldAppDataIsolationEnabled) param.args[21] = true // boolean bindMountAppStorageDirs
                         //使用安卓系统判断这次bindMountAppStorageDirs的值，不强制true
-
+                        var mountMode = app.getMountMode() as Int;
                         // 获取 param.args[21] 的值并记录到日志中
                         val bindMountAppStorageDirs = param.args[21] as Boolean
                         if (bindMountAppStorageDirs){
-                            logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs")
+                            logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs $mountMode")
                         }else{
-                            logW(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs")
+                            logW(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs $mountMode")
                         }
                         return@hookBefore
                     }
