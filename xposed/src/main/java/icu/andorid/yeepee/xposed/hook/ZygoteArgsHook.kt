@@ -10,6 +10,7 @@ import icu.andorid.yeepee.common.Constants.*
 import icu.andorid.yeepee.xposed.YEPService
 import icu.andorid.yeepee.xposed.logE
 import icu.andorid.yeepee.xposed.logI
+import icu.andorid.yeepee.xposed.logW
 
 @TargetApi(Build.VERSION_CODES.S)
 class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
@@ -43,12 +44,12 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
 
                         // 获取 param.args[21] 的值并记录到日志中
                         val bindMountAppStorageDirs = param.args[21] as Boolean
-                        // var mountMode = app.getMountMode() as Int//排查判断条件
+                        var mountMode = app.getMountMode() as Int//排查判断条件
 
                         if (bindMountAppStorageDirs) {
                             logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs ")
                         } else {
-                            logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs ")
+                            logW(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs ")
                         }
                         return@hookBefore
                     }
