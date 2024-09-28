@@ -35,9 +35,13 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
                 val uid = param.args[2] as Int
                 if (uid == UID_SYSTEM) return@hookBefore
                 val apps = service.pms.getPackagesForUid(uid) ?: return@hookBefore
-                var number = 0
+                val appsString = apps.joinToString("\n") { app ->
+                    val isEnabled = if (service.isHookEnabled(app)) 1 else 0
+                    "$app $isEnabled"
+                }               
+                var number = 0//
                 for (app in apps) {
-                    number++
+                    number++//
                     if (service.isHookEnabled(app)) {
                         if (sAppDataIsolationEnabled) param.args[20] = true // boolean bindMountAppsData
 
@@ -46,12 +50,11 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
 
                         // 获取 param.args[21] 的值并记录到日志中
                         val bindMountAppStorageDirs = param.args[21] as Boolean
-                        // var mountMode = app.getMountMode() as Int//排查判断条件
 
                         if (bindMountAppStorageDirs) {
-                            logI(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs \n $apps")
+                            logI(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs \n\n $appsString")
                         } else {
-                            logW(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs \n $apps")
+                            logW(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs \n\n $appsString")
                         }
                         return@hookBefore
                     }
