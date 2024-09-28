@@ -35,7 +35,9 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
                 val uid = param.args[2] as Int
                 if (uid == UID_SYSTEM) return@hookBefore
                 val apps = service.pms.getPackagesForUid(uid) ?: return@hookBefore
+                var number = 0
                 for (app in apps) {
+                    number++
                     if (service.isHookEnabled(app)) {
                         if (sAppDataIsolationEnabled) param.args[20] = true // boolean bindMountAppsData
 
@@ -47,9 +49,9 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
                         // var mountMode = app.getMountMode() as Int//排查判断条件
 
                         if (bindMountAppStorageDirs) {
-                            logI(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs mountMode")
+                            logI(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs \n $apps")
                         } else {
-                            logW(TAG, "@startViaZygote : $uid $app Vold data: $bindMountAppStorageDirs mountMode")
+                            logW(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs \n $apps")
                         }
                         return@hookBefore
                     }
