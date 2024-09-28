@@ -47,9 +47,9 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
                         val bindMountAppStorageDirs = param.args[21] as Boolean
 
                         if (bindMountAppStorageDirs) {
-                            logI(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs ")
+                            logI(TAG, "@startViaZygote : $uid $app $bindMountAppStorageDirs ")
                         } else {
-                            logW(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs ")
+                            logW(TAG, "@startViaZygote : $uid $app $bindMountAppStorageDirs ")
                         }
                         return@hookBefore
                     }
