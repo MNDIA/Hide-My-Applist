@@ -38,7 +38,7 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
                     if (service.isHookEnabled(app)) {
                         if (sAppDataIsolationEnabled) param.args[20] = true // boolean bindMountAppsData
                         // if (sVoldAppDataIsolationEnabled) param.args[21] = true // boolean bindMountAppStorageDirs
-                        param.args[21] = true
+                        param.args[21] = false
                         logI(TAG, "@startViaZygote force mount data: $uid $app")
                         return@hookBefore
                     }
