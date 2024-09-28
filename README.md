@@ -1,7 +1,86 @@
 # Yee Pee
 ![banner](image.png)
-非官方构建
+**非官方构建**
+发生的变化：
+未签名
+去除广告减少体积
+更换名称
+修复了全局强制vold data隔离导致应用商店,浏览器,等应用阻塞崩溃的问题
 
+安卓系统的策略是在符合条件
+persist.sys.vold_app_data_isolation_enabled=1
+                && UserHandle.isApp(app.uid)
+                && !storageManagerInternal.isExternalStorageService(app.uid)
+                && mountMode != Zygote.MOUNT_EXTERNAL_ANDROID_WRITABLE
+                && mountMode != Zygote.MOUNT_EXTERNAL_PASS_THROUGH
+                && mountMode != Zygote.MOUNT_EXTERNAL_INSTALLER
+                && mountMode != Zygote.MOUNT_EXTERNAL_NONE
+                && pkgDataInfoMap != null 
+                && storageManagerInternal.isFuseMounted(userId)
+的情况下让
+indMountAppStorageDirs = true;
+
+官方HMA的策略是在符合条件
+persist.sys.vold_app_data_isolation_enabled=1
+的情况下让
+indMountAppStorageDirs = true;
+
+经测试A13/A14/matrix/hyperos系统上，对于所有应用，HMA的策略结果是indMountAppStorageDirs = true;导致少数重要应用阻塞崩溃，例如kiwi浏览器,brave浏览器,小米应用商店,一些应用的web容器,应用的某些子进程。对一些应用而言 被勾选等于被冻结
+对于上述受影响的应用或局部功能启动时，安卓系统的策略结果是indMountAppStorageDirs = flase;对于其他应用结果仍然是ture。没有发生阻塞崩溃问题
+修复如下
+```
+// if (sVoldAppDataIsolationEnabled) param.args[21] = true // boolean bindMountAppStorageDirs
+//默认让安卓系统智能判断这次bindMountAppStorageDirs的值，不强制true
+  if (service.isVoldEnabled(app)) param.args[21] = true // 同时保留强制启用vold data的隔离功能，手动按需启用
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+同时保留对单应用强制vold data隔离的可选功能
 ```
 Hide-My-Applist
 ├─ app
