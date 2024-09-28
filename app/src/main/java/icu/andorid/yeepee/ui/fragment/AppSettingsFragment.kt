@@ -101,6 +101,10 @@ class AppSettingsFragment : Fragment(R.layout.fragment_settings) {
                 it.title = PackageHelper.loadAppLabel(pack.app)
                 it.summary = PackageHelper.loadPackageInfo(pack.app).packageName
             }
+            findPreference<SwitchPreference>("vold")?.setOnPreferenceChangeListener { _, newValue ->
+                pack.config.vold = newValue as Boolean
+                true
+            }
             findPreference<SwitchPreference>("useWhiteList")?.setOnPreferenceChangeListener { _, newValue ->
                 pack.config.applyTemplates.clear()
                 pack.config.extraAppList.clear()
