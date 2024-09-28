@@ -44,7 +44,8 @@ class ZygoteArgsHook(private val service: YEPService) : IFrameworkHook {
 
                         // 获取 param.args[21] 的值并记录到日志中
                         val bindMountAppStorageDirs = param.args[21] as Boolean
-                        val pkgDataInfoMap = if (param.args[18] == null) "null" else "IMap"
+                        val pkgDataInfoMapState = if ((param.args[18] as Map<String, Pair<String, Long>>?) == null) "null" else "IMap"
+                        
                         if (bindMountAppStorageDirs) {
                             logI(TAG, "@startViaZygote : $uid $app $number $bindMountAppStorageDirs \n $pkgDataInfoMap")
                         } else {
