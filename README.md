@@ -31,10 +31,10 @@ persist.sys.vold_app_data_isolation_enabled == 1
 的情况下让  
 indMountAppStorageDirs = true;  
   
-经测试A13/A14/matrix/hyperos系统上，  
+经测试A13/A14/matrix/hyperos系统上，    
 1. 对于所有应用，HMA的策略结果是indMountAppStorageDirs = true;导致少数重要应用阻塞崩溃，例如kiwi浏览器,brave浏览器,小米应用商店,一些应用的web容器,应用的某些子进程。这对一些应用而言 被勾选等于被冻结  
 2. 对于上述受影响的应用或局部功能启动时，安卓系统的策略结果是indMountAppStorageDirs = flase;对于其他应用结果仍然是ture。没有发生阻塞崩溃问题
-### 修复如下    
+### 修复如下 [ (10-1-2024：官方解决了该问题) ](https://github.com/Dr-TSNG/Hide-My-Applist/commit/88f82c9d25900673339a67b89c4722aca1237e13)      
 ```kotlin
 // if (sVoldAppDataIsolationEnabled) param.args[21] = true // boolean bindMountAppStorageDirs
 // 默认由安卓系统判断这次bindMountAppStorageDirs值 
